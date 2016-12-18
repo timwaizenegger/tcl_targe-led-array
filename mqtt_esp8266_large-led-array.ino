@@ -66,13 +66,13 @@ void receive_message(char* topic, byte* payload, unsigned int length) {
     msg[i] = (char)payload[i];
     Serial.print((char)payload[i]);
   }
-  msg[length] = ','; // add a , at the end to that we can use strchr for all three values
+  msg[length] = ','; // add a , at the end so that we can use strchr for all three values
   msg[length + 1] = 0; // null-terminate the string
   Serial.println();
 
 
   /*
-    Here we need to split the command string into it's fields:
+    Here we need to split the command string into its fields:
     input looks like this 13,36,234 we modified it to: 13,36,234,
     and we need to get three ints
 
